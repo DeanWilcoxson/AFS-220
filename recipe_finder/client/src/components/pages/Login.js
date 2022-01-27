@@ -5,8 +5,11 @@ class Login extends Component {
     return (
       <FlexContainer>
         <h4>Log In / Sign Up</h4>
-        <input placeholder="Email" />
-        <input placeholder="Password" />
+        <form>
+          <input placeholder="Email" />
+          <input placeholder="Password" />
+          <button>Log In / Sign Up</button>
+        </form>
       </FlexContainer>
     );
   }
