@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const StyledFooter = styled.div`
-  background-color: #4d4d4dc1;
+  background-color: #4d4d4d;
   display: flex;
   color: white;
   flex-direction: column;
@@ -11,6 +11,7 @@ export const StyledFooter = styled.div`
   bottom: 0px;
   z-index: 1;
   width: 100%;
+  height: 25%;
   ul {
     display: flex;
     flex-direction: row;

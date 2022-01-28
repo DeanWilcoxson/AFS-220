@@ -5,12 +5,13 @@ export const StyledHeader = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    width: auto;
-    height: auto;
+    width: 325px;
+    height: 325px;
   }
   h1 {
     font-family: "Impact";
     color: lightblue;
+    margin: auto;
   }
   h3 {
     color: lightgrey;
