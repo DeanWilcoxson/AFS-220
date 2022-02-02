@@ -6,10 +6,10 @@ class Login extends Component {
       <FlexContainer>
         <h4>Log In / Sign Up</h4>
         <form>
-          <input placeholder="Email" />
-          <input placeholder="Password" />
-          <button>Log In / Sign Up</button>
+          <input placeholder="Email" name="username" />
+          <input placeholder="Password" name="password" />
         </form>
+        <button>Submit</button>
       </FlexContainer>
     );
   }

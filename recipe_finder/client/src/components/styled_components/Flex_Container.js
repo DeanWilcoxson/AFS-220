@@ -6,16 +6,20 @@ export const FlexContainer = styled.div`
   align-items: center;
   padding: 25px;
   margin: auto;
-  input {
-    width: 25%;
-    padding: 5px;
-    margin: 5px;
-  }
+
   h4 {
-    color: lightgrey;
+    color: #4d4d4d;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
-  input {
-    width: 25%;
+  button {
+    border: 2px outset;
+    border-radius: 10px;
+    color: white;
+    background-color: #259cc3;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  button:hover {
+    background-color: green;
   }
 `;
