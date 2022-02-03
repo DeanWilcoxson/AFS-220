@@ -41,7 +41,4 @@ a:hover {
     color: #259cc3;
     text-shadow: grey 1px 0.25px 2px;
   }
-  span:hover {
-    background-color: #4d4d4d;
-  }
 `;

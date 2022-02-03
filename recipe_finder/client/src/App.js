@@ -14,13 +14,13 @@ import Error from "./components/pages/Error";
 
 class App extends Component {
   render() {
-    <Route exact path="/" element={<Login />}></Route>
+    // <Route exact path="/" element={<Home />}></Route>
     return (
       <div>
         <Navbar />
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/" element={<Login />}></Route>
           <Route exact path="/recipes" element={<Recipes />}></Route>
           <Route exact path="/contacts" element={<Contact />}></Route>
           <Route exact path="/resources" element={<Resources />}></Route>
