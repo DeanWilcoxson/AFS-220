@@ -1,7 +1,7 @@
 import { React, useState, useContext } from "react";
 import Form from "./Auth_Form";
 import { FlexContainer } from "../styled_components/Flex_Container";
-import {UserContext} from "../../context/UserContext.js";
+import { UserContext } from "../../context/UserContext.js";
 
 const initInputs = { username: "", password: "" };
 export default function Auth() {
@@ -14,17 +14,22 @@ export default function Auth() {
   }
   function handleLogin(e) {
     e.preventDefault();
-    login(inputs);
+    if (inputs.username.value === "" || inputs.password.value === "") {
+      return alert("Please fill in both fields.");
+    } else {
+      login(inputs);
+    }
   }
   function handleSignup(e) {
     e.preventDefault();
-    console.log(inputs)
+    console.log(inputs);
     signup(inputs);
   }
   function toggleForm() {
     setToggle((prev) => !prev);
     resetAuthErr();
   }
+
   return (
     <FlexContainer>
       <h4>Log In / Sign Up</h4>
