@@ -1,36 +1,37 @@
-import { React, Component } from "react";
-import { Route, Routes } from "react-router-dom";
-import Home from "./components/pages/Home";
+import { React, useContext } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { UserContext } from "./context/UserContext.js";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
-import Navbar from "./components/layout/Navbar";
-import Login from "./components/pages/Login";
-import Recipes from "./components/pages/Recipes";
-import Contact from "./components/pages/Contact";
-import Resources from "./components/pages/Resources";
-import Services from "./components/pages/Services";
 import About from "./components/pages/About";
-import Error from "./components/pages/Error";
-
-class App extends Component {
-  render() {
-    // <Route exact path="/" element={<Home />}></Route>
-    return (
-      <div>
-        <Navbar />
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<Login />}></Route>
-          <Route exact path="/recipes" element={<Recipes />}></Route>
-          <Route exact path="/contacts" element={<Contact />}></Route>
-          <Route exact path="/resources" element={<Resources />}></Route>
-          <Route exact path="/services" element={<Services />}></Route>
-          <Route exact path="/about" element={<About />}></Route>
-          <Route exact path="*" element={<Error />} />
-        </Routes>
-        <Footer />
-      </div>
-    );
-  }
+import Navbar from "./components/layout/Navbar";
+import ProtectedRoute from "./components/authentication/Protected_Route";
+import Home from "./components/pages/Home";
+import Auth from "./components/authentication/Auth.js";
+export default function App() {
+  const { token, logout, userState } = useContext(UserContext);
+  console.log(token);
+  const isAuthenticated = !!localStorage.getItem("token");
+  return (
+    <div>
+      <Navbar logout={logout} token={token} />
+      <Header />
+      <Routes>
+        {isAuthenticated ? (
+          <Route
+            exact
+            path="/"
+            element={<ProtectedRoute auth={token} comp={<Auth />} />}
+          ></Route>
+        ) : (
+          <Route
+            exact
+            path="/user_home"
+            element={<ProtectedRoute auth={token} comp={<Home />} />}
+          ></Route>
+        )}
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
-export default App;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const StyledNavbar = styled.div`
-  /* display: flex;
+display: flex;
 flex-direction: column;
 justify-content: left;
 align-items: left;
@@ -18,8 +18,8 @@ a {
 a:hover {
   background-color: #555;
   color: white;
-} */
-  display: flex;
+}
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -40,5 +40,5 @@ a:hover {
   a:hover {
     color: #259cc3;
     text-shadow: grey 1px 0.25px 2px;
-  }
+  } */
 `;

@@ -5,19 +5,20 @@ const mongoose = require("mongoose");
 const expressJwt = require("express-jwt");
 require("dotenv").config();
 
-main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect("mongodb://localhost:27017/RecipeFinder");
   console.log("Connected to the DB");
 }
 
+main().catch((err) => console.log(err));
+
 app.use(express.json());
 app.use(morgan("dev"));
 app.use("/auth", require("./routes/Auth_Router"));
 app.use("/api", expressJwt({ secret: process.env.secret, algorithms: ["HS256"] }));
-app.use("/api/user", require("./routes/User_Router.js"));
-app.use("/api/recipe", require("./routes/Recipe_Router.js"));
+// app.use("/api/user", require("./routes/User_Router.js"));
+// app.use("/api/recipe", require("./routes/Recipe_Router.js"));
 
 
 
