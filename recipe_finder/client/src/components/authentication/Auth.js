@@ -29,7 +29,6 @@ export default function Auth() {
     setToggle((prev) => !prev);
     resetAuthErr();
   }
-
   return (
     <FlexContainer>
       <h4>Log In / Sign Up</h4>

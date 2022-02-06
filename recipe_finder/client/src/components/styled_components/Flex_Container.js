@@ -1,13 +1,13 @@
 import styled from "styled-components";
 const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '425px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px'
-}
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
+};
 
 export const device = {
   mobileS: `(min-width: ${size.mobileS})`,
@@ -17,7 +17,7 @@ export const device = {
   laptop: `(min-width: ${size.laptop})`,
   laptopL: `(min-width: ${size.laptopL})`,
   desktop: `(min-width: ${size.desktop})`,
-  desktopL: `(min-width: ${size.desktop})`
+  desktopL: `(min-width: ${size.desktop})`,
 };
 
 export const FlexContainer = styled.div`
@@ -27,7 +27,8 @@ export const FlexContainer = styled.div`
   align-items: center;
   padding: 25px;
   margin: auto;
-
+  /* top:10px;
+  position:fixed; */
   h4 {
     color: #4d4d4d;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -43,4 +44,13 @@ export const FlexContainer = styled.div`
   button:hover {
     background-color: green;
   }
+  /* img {
+  } */
+
+  /* form {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 10px;
+  } */
 `;

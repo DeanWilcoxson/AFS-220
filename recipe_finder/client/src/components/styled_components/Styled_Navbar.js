@@ -1,31 +1,39 @@
 import styled from "styled-components";
 export const StyledNavbar = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: left;
-align-items: left;
-top: 50px;
-text-align: left;
-position: fixed;
-a {
-  color: #083D77;
-  text-shadow: 2px .75px 2px grey;
-  font-size:28px;
-  display: block;
-  padding: 28px 46px;
-  text-decoration: none;
-}
-a:hover {
-  background-color: #555;
-  color: white;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  top: 50px;
+  text-align: left;
+  position: fixed;
+  a {
+    color: #083d77;
+    text-shadow: 2px 0.75px 2px grey;
+    font-size: 28px;
+    display: block;
+    padding: 28px 46px;
+    text-decoration: none;
+  }
+  a:hover {
+    background-color: #555;
+    color: white;
+  }
+  button {
+    border: none;
+    background-color: ;
+  }
+  button:hover {
+    background-color: red;
+    color:white
+  }
   /* display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0px;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   a,
   span {

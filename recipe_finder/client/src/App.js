@@ -1,4 +1,5 @@
 import { React, useContext } from "react";
+import "./App.css"
 import { Route, Routes, Navigate } from "react-router-dom";
 import { UserContext } from "./context/UserContext.js";
 import Footer from "./components/layout/Footer";
@@ -12,7 +13,7 @@ export default function App() {
   const isAuthenticated = !!localStorage.getItem("token");
   console.log(isAuthenticated);
   return (
-    <div>
+    <div className="App">
       <Navbar logout={logout} token={isAuthenticated} />
       <Header />
       <Routes>

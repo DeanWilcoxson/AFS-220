@@ -9,10 +9,6 @@ export default function Navbar(props) {
         {token ? <Link to="/user_home">Home</Link> : <></>}
         {token ? <Link to="/recipes">Saved Recipes</Link> : <></>}
         {token ? <button onClick={logout}>Logout</button> : <></>}
-        {token ? <Link to="/contacts">Contact</Link> : <></>}
-        {token ? <Link to="/about">About</Link> : <></>}
-        {token ? <Link to="/resources">Resources</Link> : <></>}
-        {token ? <Link to="/services">Services</Link> : <></>}
       </StyledNavbar>
     </div>
   );
