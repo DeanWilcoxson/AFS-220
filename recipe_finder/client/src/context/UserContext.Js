@@ -50,6 +50,7 @@ export default function UserProvider(props) {
     localStorage.removeItem("user");
     setUserState(initialState);
   }
+  
   function signup(credentials) {
     console.log(credentials);
     axios
