@@ -5,6 +5,7 @@ export const StyledHeader = styled.div`
   justify-content: center;
   align-items: center;
   img {
+    top: 5px;
     width: 325px;
     height: 325px;
   }

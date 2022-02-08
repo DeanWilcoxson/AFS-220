@@ -21,7 +21,7 @@ export const StyledNavbar = styled.div`
   }
   button {
     border: none;
-    background-color: ;
+    /* background-color: ; */
   }
   button:hover {
     background-color: red;

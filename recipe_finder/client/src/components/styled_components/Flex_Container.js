@@ -44,13 +44,7 @@ export const FlexContainer = styled.div`
   button:hover {
     background-color: green;
   }
-  /* img {
-  } */
-
-  /* form {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    top: 10px;
-  } */
+  input{
+    width:70%;
+  }
 `;
