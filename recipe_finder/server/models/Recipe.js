@@ -11,9 +11,12 @@ const recipeSchema = new Schema({
   },
   ingredients: {
     type: String,
-    amount: Number,
+    amount: String,
     required: true,
   },
-//   instructions: {},
+  instructions: {
+    type: String,
+
+  },
 });
 module.exports = mongoose.model("recipe", recipeSchema);
