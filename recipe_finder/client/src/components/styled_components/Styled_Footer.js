@@ -21,10 +21,15 @@ export const StyledFooter = styled.div`
     a {
       color: white;
       text-decoration: none;
+      padding: 5px;
+      margin: 20px;
     }
     a:hover {
-      color: chartreuse;
-      text-decoration: underline
+      color: white;
+      text-shadow: grey 1px 0.25px 2px;
+      text-decoration: underline;
+      border: 1px solid black;
+      background-color: grey;
     }
   }
 `;
