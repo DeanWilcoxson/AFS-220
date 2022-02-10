@@ -1,21 +1,23 @@
 import styled from "styled-components";
 export const StyledHeader = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+  position: fixed;
+  left: 0px;
   img {
-    top: 5px;
     width: 325px;
     height: 325px;
   }
   h1 {
     font-family: "Impact";
-    color: lightblue;
+    color: grey;
     margin: auto;
+    left: 0px;
   }
   h3 {
-    color: lightgrey;
+    color: darkolivegreen;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   }
 `;

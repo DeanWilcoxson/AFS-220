@@ -1,5 +1,5 @@
 import { React, useContext } from "react";
-import "./App.css"
+import "./App.css";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { UserContext } from "./context/UserContext.js";
 import Footer from "./components/layout/Footer";
@@ -9,13 +9,13 @@ import ProtectedRoute from "./components/authentication/Protected_Route";
 import Home from "./components/pages/Home";
 import Auth from "./components/authentication/Auth.js";
 export default function App() {
-  const { logout } = useContext(UserContext);
+  const { logout, user } = useContext(UserContext);
   const isAuthenticated = !!localStorage.getItem("token");
-  console.log(isAuthenticated);
+  console.log(user);
   return (
     <div className="App">
+      <Header user={user}/>
       <Navbar logout={logout} token={isAuthenticated} />
-      <Header />
       <Routes>
         <Route
           exact

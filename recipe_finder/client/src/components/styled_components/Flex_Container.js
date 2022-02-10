@@ -27,8 +27,7 @@ export const FlexContainer = styled.div`
   align-items: center;
   padding: 25px;
   margin: auto;
-  /* top:10px;
-  position:fixed; */
+
   h4 {
     color: #4d4d4d;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -44,7 +43,7 @@ export const FlexContainer = styled.div`
   button:hover {
     background-color: green;
   }
-  input{
-    width:70%;
+  input {
+    width: 70%;
   }
 `;

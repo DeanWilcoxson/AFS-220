@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const StyledFooter = styled.div`
-  background-color: #4d4d4d;
+  background-color: darkolivegreen;
   display: flex;
   color: white;
   flex-direction: column;
@@ -23,7 +23,8 @@ export const StyledFooter = styled.div`
       text-decoration: none;
     }
     a:hover {
-      color: #083d77;
+      color: chartreuse;
+      text-decoration: underline
     }
   }
 `;
