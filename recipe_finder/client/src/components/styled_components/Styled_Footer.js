@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const StyledFooter = styled.div`
-  background-color: darkolivegreen;
+  background-color: #1f2c08;
   display: flex;
   color: white;
   flex-direction: column;
@@ -28,8 +28,12 @@ export const StyledFooter = styled.div`
       color: white;
       text-shadow: grey 1px 0.25px 2px;
       text-decoration: underline;
-      border: 1px solid black;
-      background-color: grey;
+      border: 1px solid #0000ff8f;
+      background-color: #0000ff8f;
     }
+  }
+  h4 {
+    padding: auto;
+    margin: auto;
   }
 `;

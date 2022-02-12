@@ -1,20 +1,38 @@
 import styled from "styled-components";
 export const StyledBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
   align-items: center;
+  position: relative;
 
   input {
-    padding: 5px;
+    padding: 15px;
     margin: 20px;
-    width: 40%;
+    width: 90%;
     border: 2px outset;
     border-radius: 10px;
+    align-self: center;
+    grid-column: 2/3;
+    grid-row: 3/4;
   }
-  img {
-    top: 0px;
-    padding: 0px;
-    margin: 0px;
+  span {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  button {
+    color:white;
+    width:25%;
+    border: none;
+    background-color: #8080807d;
+    :hover{
+      background-color: Green;
+
+    }
   }
 `;
