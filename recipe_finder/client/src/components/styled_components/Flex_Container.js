@@ -29,8 +29,7 @@ export const FlexContainer = styled.div`
   margin: auto;
 
   h4 {
-    color: #4d4d4d;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: darkolivegreen;
   }
   button {
     border: 2px outset;
@@ -45,5 +44,14 @@ export const FlexContainer = styled.div`
   }
   input {
     width: 70%;
+    border: 2px outset;
+    border-radius: 10px;
+  }
+  p {
+    font-weight: bold;
+    font-size: larger;
+    color: red;
+    background-color: #000000cf;
+    text-align: center;
   }
 `;

@@ -25,7 +25,7 @@ export default function Form(props) {
         value={password}
       />
       <button onClick={handleSubmit}>{btnText}</button>
-      <p className="errMsg">{errMsg}</p>
+      <p>{errMsg}</p>
     </form>
   );
 }

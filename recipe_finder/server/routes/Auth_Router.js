@@ -34,10 +34,7 @@ authRouter.post("/login", (req, res, next) => {
       res.status(500);
       return next(err);
     }
-    if (
-      !user
-      // || req.body.password !== user.password
-    ) {
+    if (!user) {
       console.log(req.body.password, user);
       res.status(403);
       return next(new Error(failedLogin));

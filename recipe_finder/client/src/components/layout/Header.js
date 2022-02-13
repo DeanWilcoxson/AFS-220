@@ -7,9 +7,8 @@ export default function Header(props) {
   return (
     <StyledHeader>
       <img src={image} alt="Logo" />
-      <span>
-        {user ? <h3>Hello, {user.username}</h3> : <h3>Hello, Please login</h3>}
-      </span>
+
+      <h3>{!user ? `Hello, ${user.username}` : `Hello, Please login`}</h3>
     </StyledHeader>
   );
 }
