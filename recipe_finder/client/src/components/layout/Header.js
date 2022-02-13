@@ -7,8 +7,9 @@ export default function Header(props) {
   return (
     <StyledHeader>
       <img src={image} alt="Logo" />
-
-      <h3>{!user ? `Hello, ${user.username}` : `Hello, Please login`}</h3>
+      {user ? <h3>{user.username}</h3> : <h3>Hello, Please login</h3>}
     </StyledHeader>
   );
+  // <h3>{!user ? `Hello, Please login` : `Hello, ${user.username}`}</h3>
+  // Ternary Statement not working properly... "Please login" persists even with a user.
 }
