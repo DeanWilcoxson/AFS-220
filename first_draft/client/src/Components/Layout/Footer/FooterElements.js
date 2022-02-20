@@ -5,7 +5,7 @@ export const FooterContainer = styled.div`
   display: flex;
   color: white;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   left: 0px;
@@ -24,12 +24,13 @@ export const FooterList = styled.ul`
 export const FooterLink = styled(Link)`
   color: white;
   text-decoration: none;
-  padding: 5px;
-  margin: 20px;
+  font-weight: bold;
+  font-size: large;
   :hover {
     color: white;
     text-shadow: grey 1px 0.25px 2px;
     text-decoration: underline;
+    padding: 0 10px;
     border: 1px solid #0000ff8f;
     background-color: #0000ff8f;
   }

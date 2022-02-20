@@ -11,6 +11,9 @@ export const HeaderContainer = styled.div`
   color: white;
   z-index: 10;
   border-bottom: black 1px solid;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 export const HeaderTitle = styled.h1`
   justify-self: center;
@@ -25,11 +28,17 @@ export const HeaderTitle = styled.h1`
     color: blue;
     cursor: pointer;
   }
+  @media screen and (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
 export const HeaderWelcome = styled.h3`
   width: 100%;
   height: 10%;
   color: white;
   padding: 10px 5px;
-  /* margin: 10px; */
+  margin: 10px;
+  @media screen and (max-width: 768px) {
+    padding: 0 5px;
+  }
 `;

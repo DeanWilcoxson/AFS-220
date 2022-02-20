@@ -1,20 +1,26 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import { UserContext } from "./Components/Context/UserContext";
 import Footer from "./Components/Layout/Footer/Footer";
 import Header from "./Components/Layout/Header/Header";
 import Navbar from "./Components/Layout/Navbar/Navbar";
+import Sidebar from "./Components/Layout/Sidebar/Sidebar";
 import ProtectedRoute from "./Components/Authentication/Protected_Route";
 import Home from "./Components/Pages/Home/Home";
 import Services from "./Components/Pages/Services/Services";
 import Resources from "./Components/Pages/Resources/Resources";
 import Contact from "./Components/Pages/Contact/Contact";
 import About from "./Components/Pages/About/About";
+import Recipes from "./Components/Pages/Recipes/Recipes";
 import Auth from "./Components/Authentication/Auth";
 import { VideoBg, HeroBg } from "./Video/VideoElements";
 import video from "./Video/FoodVideo1.mp4";
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   const { logout, user } = useContext(UserContext);
   const isAuthenticated = !!localStorage.getItem("token");
   return (
@@ -23,7 +29,13 @@ const App = () => {
         <VideoBg autoPlay loop muted src={video} type="video/mp4" />
       </HeroBg>
       <Header user={user} />
-      <Navbar logout={logout} token={isAuthenticated} />
+      <Sidebar
+        token={isAuthenticated}
+        isOpen={isOpen}
+        logout={logout}
+        toggle={toggle}
+      />
+      <Navbar logout={logout} token={isAuthenticated} toggle={toggle} />
       <Routes>
         <Route
           exact
@@ -87,6 +99,17 @@ const App = () => {
             <ProtectedRoute
               auth={isAuthenticated}
               comp={<About />}
+              redirectTo={<Navigate to="/" />}
+            />
+          }
+        ></Route>
+        <Route
+          exact
+          path="/recipes"
+          element={
+            <ProtectedRoute
+              auth={isAuthenticated}
+              comp={<Recipes />}
               redirectTo={<Navigate to="/" />}
             />
           }

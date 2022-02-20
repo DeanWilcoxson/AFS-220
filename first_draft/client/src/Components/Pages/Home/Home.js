@@ -1,16 +1,22 @@
+import {
+  HomeContainer,
+  SearchInput,
+  ButtonContainer,
+  Button,
+} from "./HomeElements";
 const Home = () => {
   function handleAddItem() {}
   function handleSearch() {}
   return (
-    <div>
-      <input placeholder="What's in your Fridge??" name="searchBar" />
-      <span>
-        <button onClick={handleAddItem} name="">
+    <HomeContainer>
+      <SearchInput placeholder="What's in your Fridge??" name="searchBar" />
+      <ButtonContainer>
+        <Button onClick={handleAddItem} name="">
           Add
-        </button>
-        <button onClick={handleSearch}>Search</button>
-      </span>
-    </div>
+        </Button>
+        <Button onClick={handleSearch}>Search</Button>
+      </ButtonContainer>
+    </HomeContainer>
   );
 };
 export default Home;

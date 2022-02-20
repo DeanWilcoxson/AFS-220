@@ -9,7 +9,7 @@ export const HeroBg = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 `;
 export const VideoBg = styled.video`
   width: 100%;
@@ -17,5 +17,5 @@ export const VideoBg = styled.video`
   object-fit: cover;
   -o-object-fit: cover;
   background: #232a34;
-  z-index: 1;
+  z-index: 0;
 `;
