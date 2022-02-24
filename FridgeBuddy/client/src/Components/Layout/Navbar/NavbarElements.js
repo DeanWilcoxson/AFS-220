@@ -26,6 +26,7 @@ export const NavMenu = styled.div`
   z-index: 11;
   @media screen and (max-width: 768px) {
     display: none;
+    top: 0px;
   }
 `;
 export const NavLink = styled(Link)`
