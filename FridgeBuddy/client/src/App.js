@@ -7,6 +7,7 @@ import Navbar from "./Components/Layout/Navbar/Navbar";
 import Sidebar from "./Components/Layout/Sidebar/Sidebar";
 import ProtectedRoute from "./Components/Authentication/Protected_Route";
 import Home from "./Components/Pages/Home/Home";
+import Error from "./Components/Pages/Error/Error";
 import Recipes from "./Components/Pages/Recipes/Recipes";
 import { VideoBg, HeroBg } from "./Video/VideoElements";
 import video from "./Video/FoodVideo1.mp4";
@@ -53,6 +54,17 @@ const App = () => {
             <ProtectedRoute
               auth={isAuthenticated}
               comp={<Recipes />}
+              redirectTo={<Navigate to="/" />}
+            />
+          }
+        ></Route>
+        <Route
+          exact
+          path="/*"
+          element={
+            <ProtectedRoute
+              auth={isAuthenticated}
+              comp={<Error />}
               redirectTo={<Navigate to="/" />}
             />
           }

@@ -1,9 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import { ErrorContainer, ErrorBox, ErrorDesc } from "./ErrorElements";
 const Error = () => {
   return (
-    <div>Error</div>
-  )
-}
+    <ErrorContainer>
+      <ErrorBox>
+        <ErrorDesc>Page Not found!</ErrorDesc>
+      </ErrorBox>
+    </ErrorContainer>
+  );
+};
 
-export default Error
+export default Error;
