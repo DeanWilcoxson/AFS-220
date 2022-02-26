@@ -10,7 +10,7 @@ const Recipes = () => {
       {recipes.map((recipe) => {
         console.log(recipe);
         return (
-          <Recipe key={recipe.id} title={recipe.title} image={recipe.image} />
+          <Recipe key={recipe.id} id={recipe.id} title={recipe.title} image={recipe.image} />
         );
       })}
     </RecipesList>

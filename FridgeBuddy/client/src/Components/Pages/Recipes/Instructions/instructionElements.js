@@ -1,0 +1,12 @@
+import styled from "styled-components";
+export const InstructionsContainer = styled.div``;
+export const StepList = styled.ul``;
+export const Step = styled.h1``;
+export const StepContainer = styled.div``;
+export const StepDesc = styled.p``;
+export const IngredientsList = styled.ul``;
+export const Ingredient = styled.li``;
+export const IngredientImg = styled.img``;
+export const EquipmentList = styled.ul``;
+export const Equipment = styled.li``;
+export const EquipmentImg = styled.img``;

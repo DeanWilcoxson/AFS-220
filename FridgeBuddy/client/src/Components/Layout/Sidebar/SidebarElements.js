@@ -15,6 +15,11 @@ export const SidebarContainer = styled.aside`
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  @media screen and (max-width: 768px) {
+    display: none;
+    top: 0px;
+    z-index: 0;
+  }
 `;
 export const CloseIcon = styled(FaTimes)`
   color: #fff;
@@ -61,6 +66,10 @@ export const SidebarLink = styled(Link)`
 export const SideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    display: none;
+    top: 0px;
+  }
 `;
 export const SideBtn = styled.button`
   border-radius: 50px;

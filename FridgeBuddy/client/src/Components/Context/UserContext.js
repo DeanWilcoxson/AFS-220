@@ -21,6 +21,7 @@ export default function UserProvider(props) {
   };
   const [userState, setUserState] = useState(initialState);
   const [recipes, setRecipes] = useState([]);
+  const [randomRecipes, setRandomRecipes] = useState([]);
   const [instructions, setInstructions] = useState([]);
   const apiKey = "25f0ffbe6a0e4ee19da822eed7d8af01";
   function getRecipes(ingredients) {
@@ -36,10 +37,23 @@ export default function UserProvider(props) {
         console.log(err);
       });
   }
+  function getRandomRecipes() {
+    axios
+      .get(`https://api.spoonacular.com/recipes/random?number=15&${apiKey}`)
+      .then((res) => {
+        setRandomRecipes(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   function getInstructions(id) {
     axios
-      .get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions`)
+      .get(
+        `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?&apiKey=${apiKey}`
+      )
       .then((res) => {
+        console.log(res.data);
         setInstructions(res.data);
       })
       .catch((err) => {
@@ -110,6 +124,8 @@ export default function UserProvider(props) {
         recipes,
         instructions,
         getInstructions,
+        randomRecipes,
+        getRandomRecipes,
       }}
     >
       {props.children}

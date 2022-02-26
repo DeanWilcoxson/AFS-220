@@ -1,4 +1,6 @@
-import React from "react";
+import { useContext } from "react";
+import { UserContext } from "./../../Context/UserContext";
+import Instructions from "./Instructions/Instructions";
 import {
   RecipeContainer,
   RecipeTitle,
@@ -8,19 +10,27 @@ import {
   InstructionsBtn,
   IngredientsBtn,
   DeleteBtn,
+  SaveBtn,
 } from "./RecipeElements";
-const Recipe = ({ title, image }) => {
+const Recipe = ({ title, image, id }) => {
+  const { getInstructions } = useContext(UserContext);
   const displayIngredients = () => {};
-  const displayInstructions = () => {};
   const removeRecipe = () => {};
+  const saveRecipe = () => {};
   return (
-    <RecipeContainer>
+    <RecipeContainer id={id}>
       <RecipeTitle>{title}</RecipeTitle>
       <RecipeImage src={image} />
       <IngredientsBtn onClick={displayIngredients}>Ingredients</IngredientsBtn>
-      <InstructionsBtn onClick={displayInstructions}>
+      <InstructionsBtn
+        onClick={() => {
+          getInstructions();
+          return <Instructions />;
+        }}
+      >
         Instructions
       </InstructionsBtn>
+      <SaveBtn onClick={saveRecipe}>Save Recipe</SaveBtn>
       <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
       <RecipeIngredients toggle={""}>
         <Ingredient>{}</Ingredient>
