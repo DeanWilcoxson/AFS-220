@@ -13,27 +13,34 @@ export default function UserProvider(props) {
   const initialState = {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || "",
-    ingredients: [],
     recipes: [],
     savedRecipes: [],
+    ingredients: [],
+    instructions: [],
     errMsg: "",
   };
   const [userState, setUserState] = useState(initialState);
   const [recipes, setRecipes] = useState([]);
+  const [instructions, setInstructions] = useState([]);
   const apiKey = "25f0ffbe6a0e4ee19da822eed7d8af01";
   function getRecipes(ingredients) {
     var newString = transformString(ingredients);
-    // const options = {
-    //   method: "GET",
-    //   url: "https://api.spoonacular.com/recipes/findByIngredients?",
-    //   params: { apiKey: apiKey, ingredients: newString },
-    // };
     axios
       .get(
-        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=2&apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=5&apiKey=${apiKey}`
       )
       .then((res) => {
         setRecipes(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  function getInstructions(id) {
+    axios
+      .get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions`)
+      .then((res) => {
+        setInstructions(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -101,6 +108,8 @@ export default function UserProvider(props) {
         handleAuthErr,
         getRecipes,
         recipes,
+        instructions,
+        getInstructions,
       }}
     >
       {props.children}

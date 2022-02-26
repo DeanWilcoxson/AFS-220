@@ -3,10 +3,10 @@ const Header = ({ user }) => {
   return (
     <HeaderContainer>
       <HeaderTitle>FridgeBuddy</HeaderTitle>
-      {user.username || typeof user.username !== "undefined" ? (
+      {user.username ? (
         <HeaderWelcome>Welcome, {user.username}</HeaderWelcome>
       ) : (
-        <></>
+        <>Hello</>
       )}
     </HeaderContainer>
   );
