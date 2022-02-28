@@ -11,7 +11,7 @@ const Form = ({
   return (
     <AuthForm>
       <AuthInput
-        placeholder="Email Address"
+        placeholder="Username"
         name="username"
         type="text"
         onChange={handleChange}

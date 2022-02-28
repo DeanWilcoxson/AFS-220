@@ -3,10 +3,10 @@ const Header = ({ user }) => {
   return (
     <HeaderContainer>
       <HeaderTitle>FridgeBuddy</HeaderTitle>
-      {user.username ? (
+      {user ? (
         <HeaderWelcome>Welcome, {user.username}</HeaderWelcome>
       ) : (
-        <>Hello</>
+        <></>
       )}
     </HeaderContainer>
   );

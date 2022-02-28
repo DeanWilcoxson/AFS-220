@@ -11,7 +11,6 @@ export const SearchContainer = styled.div`
   display: flex;
   flex-direction: row;
   z-index: 20;
-  /* top: 400px; */
   margin: 100px;
 `;
 export const SearchInput = styled.input`
