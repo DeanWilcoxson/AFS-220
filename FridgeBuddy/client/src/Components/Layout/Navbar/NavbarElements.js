@@ -7,9 +7,10 @@ export const NavContainer = styled.nav`
   flex-direction: row;
   justify-content: right;
   align-items: center;
-  position: fixed;
+  position: sticky;
+  background-color: #ff7f50c4;
+  border-bottom: black 1px solid;
   width: 90%;
-  margin: 15px;
   padding: 20px;
   color: black;
   z-index: 10;
@@ -19,7 +20,7 @@ export const NavMenu = styled.div`
   flex-direction: row;
   justify-content: right;
   align-items: center;
-  position: fixed;
+  /* position: fixed; */
   width: 90%;
   margin: 0 50px;
   color: black;
@@ -30,7 +31,8 @@ export const NavMenu = styled.div`
   }
 `;
 export const NavLink = styled(Link)`
-  color: white;
+  color: lightblue;
+  text-shadow: black 1px 1px 1px;
   font-weight: bold;
   text-decoration: none;
   font-size: large;
@@ -41,22 +43,22 @@ export const NavLink = styled(Link)`
     text-decoration: underline;
     border: 1px solid #0000ff8f;
     background-color: #0000ff8f;
-    padding: 0 10px;
+    /* padding: 0 10px; */
   }
 `;
 export const NavBtn = styled.button`
   border: none;
   background-color: transparent;
   font-weight: bold;
-  color: white;
+  color: lightblue;
   font-size: large;
-  text-shadow: grey 0.5px 0.25px 2px;
+  text-shadow: black 1px 1px 1px;
   :hover {
     color: white;
     text-decoration: underline;
     border: 1px solid darkred;
     background-color: darkred;
-    padding: 0 10px;
+    /* padding: 0 10px; */
   }
 `;
 export const MobileIcon = styled.div`

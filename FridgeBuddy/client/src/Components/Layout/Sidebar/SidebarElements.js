@@ -16,9 +16,9 @@ export const SidebarContainer = styled.aside`
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   @media screen and (max-width: 768px) {
-    display: none;
-    top: 0px;
-    z-index: 0;
+    /* display: none; */
+    top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+    z-index: 999;
   }
 `;
 export const CloseIcon = styled(FaTimes)`
@@ -67,7 +67,6 @@ export const SideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
   @media screen and (max-width: 768px) {
-    display: none;
     top: 0px;
   }
 `;

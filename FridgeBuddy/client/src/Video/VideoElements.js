@@ -19,3 +19,9 @@ export const VideoBg = styled.video`
   background: #232a34;
   z-index: 0;
 `;
+export const TopBar = styled.div`
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
+  flex-direction: row;
+  justify-content: center;
+`;

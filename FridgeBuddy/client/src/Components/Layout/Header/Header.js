@@ -1,10 +1,17 @@
-import { HeaderContainer, HeaderWelcome, HeaderTitle } from "./HeaderElements";
+import {
+  HeaderContainer,
+  HeaderWelcome,
+  HeaderTitle,
+  Name,
+} from "./HeaderElements";
 const Header = ({ user }) => {
   return (
     <HeaderContainer>
       <HeaderTitle>FridgeBuddy</HeaderTitle>
       {user ? (
-        <HeaderWelcome>Welcome, {user.username}</HeaderWelcome>
+        <HeaderWelcome>
+          Welcome, <Name>{user.username}</Name>
+        </HeaderWelcome>
       ) : (
         <></>
       )}

@@ -11,6 +11,7 @@ import {
   IngredientsBtn,
   DeleteBtn,
   SaveBtn,
+  ButtonBox,
 } from "./RecipeElements";
 const Recipe = ({ title, image, id }) => {
   const { getInstructions } = useContext(UserContext);
@@ -21,18 +22,22 @@ const Recipe = ({ title, image, id }) => {
     <RecipeContainer id={id}>
       <RecipeTitle>{title}</RecipeTitle>
       <RecipeImage src={image} />
-      <IngredientsBtn onClick={displayIngredients}>Ingredients</IngredientsBtn>
-      <InstructionsBtn
-        onClick={() => {
-          getInstructions();
-          return <Instructions />;
-        }}
-      >
-        Instructions
-      </InstructionsBtn>
-      <SaveBtn onClick={saveRecipe}>Save Recipe</SaveBtn>
-      <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
-      <RecipeIngredients toggle={""}>
+      <ButtonBox>
+        <IngredientsBtn onClick={displayIngredients}>
+          Ingredients
+        </IngredientsBtn>
+        <InstructionsBtn
+          onClick={() => {
+            getInstructions();
+            return <Instructions />;
+          }}
+        >
+          Instructions
+        </InstructionsBtn>
+        <SaveBtn onClick={saveRecipe}>Save Recipe</SaveBtn>
+        <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
+      </ButtonBox>
+      <RecipeIngredients>
         <Ingredient>{}</Ingredient>
       </RecipeIngredients>
     </RecipeContainer>

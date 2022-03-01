@@ -2,13 +2,15 @@ import styled from "styled-components";
 export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
-  position: fixed;
+  position: sticky;
   left: 0;
   right: 0;
   top: 0;
   right: 0;
-  background-color: green;
-  color: white;
+  width: 100%;
+  background-color: #ffa600ac;
+  color: lightblue;
+  text-shadow: black 1px 1px 1px;
   z-index: 10;
   border-bottom: black 1px solid;
   @media screen and (max-width: 768px) {
@@ -32,10 +34,15 @@ export const HeaderTitle = styled.h1`
 export const HeaderWelcome = styled.h3`
   width: 100%;
   height: 10%;
-  color: white;
+  color: lightblue;
+  text-shadow: black 1px 1px 1px;
   padding: 20px 15px;
   margin: 10px;
   @media screen and (max-width: 768px) {
     padding: 0 5px;
   }
+`;
+export const Name = styled.b`
+  color: blue;
+  text-shadow: black .5px 1px 1px;
 `;

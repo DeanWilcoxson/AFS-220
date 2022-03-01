@@ -25,17 +25,17 @@ const Sidebar = ({ isOpen, toggle, logout, token }) => {
               <SidebarLink to="/recipes" onClick={toggle}>
                 Saved Recipes
               </SidebarLink>
+              <SideBtnWrap>
+                <SideBtn
+                  onClick={() => {
+                    logout();
+                    toggle();
+                  }}
+                >
+                  Logout
+                </SideBtn>
+              </SideBtnWrap>
             </SidebarMenu>
-            <SideBtnWrap>
-              <SideBtn
-                onClick={() => {
-                  logout();
-                  toggle();
-                }}
-              >
-                Logout
-              </SideBtn>
-            </SideBtnWrap>
           </SidebarWrapper>
         </>
       ) : (

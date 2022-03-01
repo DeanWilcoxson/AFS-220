@@ -9,7 +9,7 @@ import ProtectedRoute from "./Components/Authentication/Protected_Route";
 import Home from "./Components/Pages/Home/Home";
 import Error from "./Components/Pages/Error/Error";
 import Recipes from "./Components/Pages/Recipes/Recipes";
-import { VideoBg, HeroBg } from "./Video/VideoElements";
+import { VideoBg, HeroBg, TopBar } from "./Video/VideoElements";
 import video from "./Video/FoodVideo1.mp4";
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,14 +23,18 @@ const App = () => {
       <HeroBg>
         <VideoBg autoPlay loop muted src={video} type="video/mp4" />
       </HeroBg>
-      <Header user={user} />
-      <Sidebar
+      <TopBar>
+        <Header user={user} />
+        <Navbar logout={logout} token={isAuthenticated} toggle={toggle} /><Sidebar
         token={isAuthenticated}
         isOpen={isOpen}
         logout={logout}
         toggle={toggle}
       />
-      <Navbar logout={logout} token={isAuthenticated} toggle={toggle} />
+      </TopBar>
+
+      
+
       <Routes>
         <Route
           exact

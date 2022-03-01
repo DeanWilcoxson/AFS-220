@@ -14,13 +14,14 @@ export default function UserProvider(props) {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || "",
     recipes: [],
-    savedRecipes: [],
+    userRecipes: [],
     ingredients: [],
     instructions: [],
     errMsg: "",
   };
   const [userState, setUserState] = useState(initialState);
   const [recipes, setRecipes] = useState([]);
+  const [userRecipes, setUserRecipes] = useState([]);
   const [randomRecipes, setRandomRecipes] = useState([]);
   const [instructions, setInstructions] = useState([]);
   const apiKey = "25f0ffbe6a0e4ee19da822eed7d8af01";
@@ -59,6 +60,9 @@ export default function UserProvider(props) {
       .catch((err) => {
         console.log(err);
       });
+  }
+  function saveUserRecipe(recipe) {
+    setUserRecipes(recipe);
   }
   function transformString(ingredients) {
     return ingredients;
@@ -126,6 +130,8 @@ export default function UserProvider(props) {
         getInstructions,
         randomRecipes,
         getRandomRecipes,
+        userRecipes,
+        saveUserRecipe,
       }}
     >
       {props.children}

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Recipe from "./Recipe";
 import { RecipesList } from "./RecipeElements";
 import { UserContext } from "../../Context/UserContext";
