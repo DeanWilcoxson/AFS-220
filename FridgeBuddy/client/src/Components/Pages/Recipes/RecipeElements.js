@@ -34,7 +34,9 @@ export const RecipeImage = styled.img`
 export const RecipeIngredients = styled.ul`
   /* display: none; */
 `;
-export const Ingredient = styled.li``;
+export const Ingredient = styled.li`
+  color: lightblue;
+`;
 export const ButtonBox = styled.div`
   grid-column: 1/4;
   display: flex;
