@@ -45,8 +45,13 @@ const Recipe = ({ title, image, id, recipe }) => {
         <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
       </ButtonBox>
       <RecipeIngredients>
-        {recipe.usedIngredients.map((ingredient) => {
-          return <Ingredient>{ingredient.name}</Ingredient>;
+        {recipe.usedIngredients.map((usedIngredient) => {
+          console.log(usedIngredient);
+          return <Ingredient key={usedIngredient.id}>{usedIngredient.original}</Ingredient>;
+        })}
+        {recipe.unusedIngredients.map((unUsedIngredient) => {
+          console.log(unUsedIngredient)
+          return <Ingredient key={unUsedIngredient.id}>{unUsedIngredient.original}</Ingredient>;
         })}
       </RecipeIngredients>
     </RecipeContainer>
