@@ -1,7 +1,12 @@
 import { React, useState, useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 import Form from "./Auth_Form";
-import { AuthContainer, AuthTitle, ToggleButton } from "./AuthElements";
+import {
+  AuthContainer,
+  AuthTitle,
+  ToggleButton,
+  AuthBox,
+} from "./AuthElements";
 
 const initInputs = { username: "", password: "" };
 const Auth = () => {
@@ -31,34 +36,36 @@ const Auth = () => {
   }
   return (
     <AuthContainer>
-      <AuthTitle>Log In / Sign Up</AuthTitle>
-      {!toggle ? (
-        <>
-          <Form
-            handleChange={handleChange}
-            handleSubmit={handleSignup}
-            inputs={inputs}
-            btnText="Sign Up"
-            errMsg={errMsg}
-          />
-          <ToggleButton onClick={() => toggleForm()}>
-            Already a Member?
-          </ToggleButton>
-        </>
-      ) : (
-        <>
-          <Form
-            handleChange={handleChange}
-            handleSubmit={handleLogin}
-            inputs={inputs}
-            btnText="Sign In"
-            errMsg={errMsg}
-          />
-          <ToggleButton onClick={() => toggleForm()}>
-            Not a Member?
-          </ToggleButton>
-        </>
-      )}
+      <AuthBox>
+        <AuthTitle>Log In / Sign Up</AuthTitle>
+        {!toggle ? (
+          <>
+            <Form
+              handleChange={handleChange}
+              handleSubmit={handleSignup}
+              inputs={inputs}
+              btnText="Sign Up"
+              errMsg={errMsg}
+            />
+            <ToggleButton onClick={() => toggleForm()}>
+              Already a Member?
+            </ToggleButton>
+          </>
+        ) : (
+          <>
+            <Form
+              handleChange={handleChange}
+              handleSubmit={handleLogin}
+              inputs={inputs}
+              btnText="Sign In"
+              errMsg={errMsg}
+            />
+            <ToggleButton onClick={() => toggleForm()}>
+              Not a Member?
+            </ToggleButton>
+          </>
+        )}
+      </AuthBox>
     </AuthContainer>
   );
 };

@@ -13,11 +13,18 @@ import {
   SaveBtn,
   ButtonBox,
 } from "./RecipeElements";
-const Recipe = ({ title, image, id }) => {
-  const { getInstructions } = useContext(UserContext);
+const Recipe = ({ title, image, id, recipe }) => {
+  console.log(recipe.usedIngredients);
+  const { getInstructions, saveUserRecipe, removeUserRecipe } = useContext(
+    UserContext
+  );
   const displayIngredients = () => {};
-  const removeRecipe = () => {};
-  const saveRecipe = () => {};
+  const removeRecipe = () => {
+    removeUserRecipe();
+  };
+  const saveRecipe = () => {
+    saveUserRecipe(recipe);
+  };
   return (
     <RecipeContainer id={id}>
       <RecipeTitle>{title}</RecipeTitle>
@@ -38,7 +45,9 @@ const Recipe = ({ title, image, id }) => {
         <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
       </ButtonBox>
       <RecipeIngredients>
-        <Ingredient>{}</Ingredient>
+        {recipe.usedIngredients.map((ingredient) => {
+          return <Ingredient>{ingredient.name}</Ingredient>;
+        })}
       </RecipeIngredients>
     </RecipeContainer>
   );

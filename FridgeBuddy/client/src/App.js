@@ -8,7 +8,8 @@ import Sidebar from "./Components/Layout/Sidebar/Sidebar";
 import ProtectedRoute from "./Components/Authentication/Protected_Route";
 import Home from "./Components/Pages/Home/Home";
 import Error from "./Components/Pages/Error/Error";
-import Recipes from "./Components/Pages/Recipes/Recipes";
+import UserRecipes from "./Components/Pages/Recipes/UserRecipes";
+
 import { VideoBg, HeroBg, TopBar } from "./Video/VideoElements";
 import video from "./Video/FoodVideo1.mp4";
 const App = () => {
@@ -32,9 +33,6 @@ const App = () => {
         toggle={toggle}
       />
       </TopBar>
-
-      
-
       <Routes>
         <Route
           exact
@@ -57,7 +55,7 @@ const App = () => {
           element={
             <ProtectedRoute
               auth={isAuthenticated}
-              comp={<Recipes />}
+              comp={<UserRecipes />}
               redirectTo={<Navigate to="/" />}
             />
           }

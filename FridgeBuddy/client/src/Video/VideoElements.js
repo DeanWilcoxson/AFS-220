@@ -21,7 +21,6 @@ export const VideoBg = styled.video`
 `;
 export const TopBar = styled.div`
   display: flex;
-  /* grid-template-columns: repeat(2, 1fr); */
   flex-direction: row;
   justify-content: center;
 `;

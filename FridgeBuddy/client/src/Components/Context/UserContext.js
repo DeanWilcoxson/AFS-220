@@ -62,8 +62,10 @@ export default function UserProvider(props) {
       });
   }
   function saveUserRecipe(recipe) {
-    setUserRecipes(recipe);
+    setUserRecipes((prevState) => [...prevState, recipe]);
+    console.log(recipe);
   }
+  function removeUserRecipe(id) {}
   function transformString(ingredients) {
     return ingredients;
   }

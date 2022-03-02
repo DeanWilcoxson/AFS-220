@@ -31,9 +31,6 @@ const Search = () => {
         onChange={handleChange}
       />
       <ButtonContainer>
-        <Button onClick={handleAddIngredient} name="add">
-          Add
-        </Button>
         <Button onClick={handleSearch} name="search">
           Search
         </Button>
@@ -43,3 +40,6 @@ const Search = () => {
 };
 
 export default Search;
+// <Button onClick={handleAddIngredient} name="add">
+//   Add
+// </Button>

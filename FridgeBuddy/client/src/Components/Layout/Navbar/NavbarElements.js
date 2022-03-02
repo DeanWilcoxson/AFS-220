@@ -8,7 +8,7 @@ export const NavContainer = styled.nav`
   justify-content: right;
   align-items: center;
   position: sticky;
-  background-color: #ff7f50c4;
+  background-color: #ffa600ac;
   border-bottom: black 1px solid;
   width: 90%;
   padding: 20px;

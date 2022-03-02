@@ -31,7 +31,7 @@ export const RecipeImage = styled.img`
   grid-row: 2/3;
 `;
 export const RecipeIngredients = styled.ul`
-  display: none;
+  /* display: none; */
 `;
 export const Ingredient = styled.li``;
 export const ButtonBox = styled.div`
