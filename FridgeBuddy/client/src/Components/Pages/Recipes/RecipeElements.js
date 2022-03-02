@@ -5,9 +5,10 @@ export const RecipesList = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 20;
+  z-index: 999;
 `;
 export const RecipeContainer = styled.div`
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: center;

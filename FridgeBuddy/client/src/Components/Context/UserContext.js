@@ -65,7 +65,7 @@ export default function UserProvider(props) {
     setUserRecipes((prevState) => [...prevState, recipe]);
     console.log(recipe);
   }
-  function removeUserRecipe(id) {}
+  // function removeUserRecipe(id) {}
   function transformString(ingredients) {
     return ingredients;
   }
