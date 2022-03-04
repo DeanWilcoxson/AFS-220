@@ -49,7 +49,7 @@ const Recipe = ({ title, image, id, recipe }) => {
           console.log(usedIngredient);
           return <Ingredient key={usedIngredient.id}>{usedIngredient.original}</Ingredient>;
         })}
-        {recipe.unusedIngredients.map((unUsedIngredient) => {
+        {recipe.missedIngredients.map((unUsedIngredient) => {
           console.log(unUsedIngredient)
           return <Ingredient key={unUsedIngredient.id}>{unUsedIngredient.original}</Ingredient>;
         })}

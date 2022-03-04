@@ -1,6 +1,14 @@
 import styled from "styled-components";
 export const RecipesList = styled.div`
-  width: 60%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+`;
+export const UserRecipesList = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
