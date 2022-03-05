@@ -1,4 +1,3 @@
-import React from "react";
 import {
   SearchContainer,
   SearchInput,
@@ -35,8 +34,4 @@ const Search = () => {
     </SearchContainer>
   );
 };
-
 export default Search;
-// <Button onClick={handleAddIngredient} name="add">
-//   Add
-// </Button>
