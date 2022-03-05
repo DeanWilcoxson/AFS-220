@@ -50,7 +50,7 @@ export const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-`;
+`; 
 export const InstructionsBtn = styled.button`
   background-color: transparent;
   border: none;

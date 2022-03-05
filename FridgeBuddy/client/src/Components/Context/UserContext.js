@@ -29,7 +29,7 @@ export default function UserProvider(props) {
     var newString = transformString(ingredients);
     axios
       .get(
-        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=5&apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=10&apiKey=${apiKey}`
       )
       .then((res) => {
         setRecipes(res.data);
