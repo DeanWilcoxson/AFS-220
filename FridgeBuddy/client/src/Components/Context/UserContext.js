@@ -54,7 +54,6 @@ export default function UserProvider(props) {
         `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?&apiKey=${apiKey}`
       )
       .then((res) => {
-        console.log(res.data);
         setInstructions(res.data);
       })
       .catch((err) => {
@@ -63,9 +62,13 @@ export default function UserProvider(props) {
   }
   function saveUserRecipe(recipe) {
     setUserRecipes((prevState) => [...prevState, recipe]);
-    console.log(recipe);
+    console.log(userRecipes);
   }
-  // function removeUserRecipe(id) {}
+  function removeUserRecipe(id) {
+    console.log(id);
+    userRecipes.splice(userRecipes.indexOf(id, 0), 1);
+    console.log(userRecipes);
+  }
   function transformString(ingredients) {
     return ingredients;
   }
@@ -134,6 +137,7 @@ export default function UserProvider(props) {
         getRandomRecipes,
         userRecipes,
         saveUserRecipe,
+        removeUserRecipe,
       }}
     >
       {props.children}

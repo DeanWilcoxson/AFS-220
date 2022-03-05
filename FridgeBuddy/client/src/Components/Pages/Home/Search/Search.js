@@ -10,13 +10,10 @@ import { UserContext } from "../../../Context/UserContext";
 const Search = () => {
   const initInput = { ingredient: "" };
   const [input, setInput] = useState(initInput);
-  const { recipes, ingredients, getRecipes } = useContext(UserContext);
+  const { getRecipes } = useContext(UserContext);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prevInput) => ({ ...prevInput, [name]: value }));
-  };
-  const handleAddIngredient = () => {
-    ingredients.push(input.ingredient);
   };
   const handleSearch = () => {
     getRecipes(input.ingredient);

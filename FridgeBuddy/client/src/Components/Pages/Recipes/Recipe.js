@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { UserContext } from "./../../Context/UserContext";
-import Instructions from "./Instructions/Instructions";
+// import Instructions from "./Instructions/Instructions";
 import {
   RecipeContainer,
   RecipeTitle,
@@ -14,13 +14,15 @@ import {
   ButtonBox,
 } from "./RecipeElements";
 const Recipe = ({ title, image, id, recipe }) => {
-  console.log(recipe.usedIngredients);
   const { getInstructions, saveUserRecipe, removeUserRecipe } = useContext(
     UserContext
   );
-  const displayIngredients = () => {};
-  const removeRecipe = () => {
-    removeUserRecipe();
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+  const removeRecipe = (e) => {
+    removeUserRecipe(e.target.parentNode.parentNode.id);
   };
   const saveRecipe = () => {
     saveUserRecipe(recipe);
@@ -30,13 +32,18 @@ const Recipe = ({ title, image, id, recipe }) => {
       <RecipeTitle>{title}</RecipeTitle>
       <RecipeImage src={image} />
       <ButtonBox>
-        <IngredientsBtn onClick={displayIngredients}>
+        <IngredientsBtn
+          onClick={() => {
+            toggle();
+          }}
+        >
           Ingredients
         </IngredientsBtn>
         <InstructionsBtn
-          onClick={() => {
-            getInstructions();
-            return <Instructions />;
+          onClick={(e) => {
+            getInstructions(e.target.parentNode.parentNode.id);
+            console.log(e.target.parentNode.parentNode.id);
+            toggle();
           }}
         >
           Instructions
@@ -44,18 +51,27 @@ const Recipe = ({ title, image, id, recipe }) => {
         <SaveBtn onClick={saveRecipe}>Save Recipe</SaveBtn>
         <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
       </ButtonBox>
-      <RecipeIngredients>
-        {recipe.usedIngredients.map((usedIngredient) => {
-          console.log(usedIngredient);
-          return <Ingredient key={usedIngredient.id}>{usedIngredient.original}</Ingredient>;
-        })}
-        {recipe.missedIngredients.map((unUsedIngredient) => {
-          console.log(unUsedIngredient)
-          return <Ingredient key={unUsedIngredient.id}>{unUsedIngredient.original}</Ingredient>;
-        })}
-      </RecipeIngredients>
+      {toggle ? (
+        <></>
+      ) : (
+        <RecipeIngredients>
+          {recipe.usedIngredients.map((usedIngredient) => {
+            return (
+              <Ingredient key={usedIngredient.id}>
+                {usedIngredient.original}
+              </Ingredient>
+            );
+          })}
+          {recipe.missedIngredients.map((unUsedIngredient) => {
+            return (
+              <Ingredient key={unUsedIngredient.id}>
+                {unUsedIngredient.original}
+              </Ingredient>
+            );
+          })}
+        </RecipeIngredients>
+      )}
     </RecipeContainer>
   );
 };
-
 export default Recipe;

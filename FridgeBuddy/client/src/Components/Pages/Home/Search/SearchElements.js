@@ -3,16 +3,20 @@ export const SearchContainer = styled.div`
   display: flex;
   flex-direction: row;
   z-index: 20;
-  margin: 100px;
+  /* margin: 100px; */
+  padding: 100px;
 `;
 export const SearchInput = styled.input`
+  border-radius: 10px;
   z-index: 20;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
 `;
 export const Button = styled.button`
   z-index: 20;
-  padding: 5px;
+  border-radius: 10px;
+
+  padding: 10px;
 `;
 export const ButtonContainer = styled.span`
   display: flex;

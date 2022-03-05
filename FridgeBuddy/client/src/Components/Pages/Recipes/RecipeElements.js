@@ -1,11 +1,11 @@
 import styled from "styled-components";
 export const RecipesList = styled.div`
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 15;
 `;
 export const UserRecipesList = styled.div`
   width: 100%;
@@ -13,21 +13,18 @@ export const UserRecipesList = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 15;
 `;
 export const RecipeContainer = styled.div`
-  z-index: 999;
+  z-index: 15;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr); */
-  background-color: #80808083;
+  background-color: #80808099;
   border: 1px black solid;
   border-radius: 10px;
-  width: 55%;
+  width: 65%;
   margin: 20px 0;
 `;
 export const RecipeTitle = styled.h1`
@@ -50,20 +47,40 @@ export const ButtonBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-`; 
+`;
 export const InstructionsBtn = styled.button`
-  background-color: transparent;
-  border: none;
+  background-color: #80808099;
+  border-radius: 5px;
+  :hover {
+    color: white;
+    background-color: green
+  }
+  color: lightblue;
 `;
 export const IngredientsBtn = styled.button`
-  background-color: transparent;
-  border: none;
+  background-color: #80808099;
+  border-radius: 5px;
+  :hover {
+    color: white;
+    background-color: green
+  }
+  color: lightblue;
 `;
 export const DeleteBtn = styled.button`
-  background-color: transparent;
-  border: none;
+  background-color: #80808099;
+  border-radius: 5px;
+  :hover {
+    color: white;
+    background-color: green
+  }
+  color: lightblue;
 `;
 export const SaveBtn = styled.button`
-  background-color: transparent;
-  border: none;
+  background-color: #80808099;
+  border-radius: 5px;
+  :hover {
+    color: white;
+    background-color: green
+  }
+  color: lightblue;
 `;

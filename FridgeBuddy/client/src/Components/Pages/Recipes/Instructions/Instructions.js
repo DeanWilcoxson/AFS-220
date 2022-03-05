@@ -11,6 +11,7 @@ const Instructions = () => {
         console.log(instruction);
         return (
           <Instruction
+            instruction={instruction}
             id={instructions.steps.number}
             step={instructions.steps.number}
             name={instructions.steps.step}
