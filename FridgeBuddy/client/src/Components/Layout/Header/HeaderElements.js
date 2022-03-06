@@ -43,6 +43,6 @@ export const HeaderWelcome = styled.h3`
   }
 `;
 export const Name = styled.b`
-  color: blue;
-  text-shadow: black .5px 1px 1px;
+  color: #0000ff8f;
+  text-shadow: grey .5px 1px 1px;
 `;
