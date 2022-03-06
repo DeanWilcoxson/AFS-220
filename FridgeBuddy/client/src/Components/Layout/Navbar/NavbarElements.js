@@ -37,13 +37,13 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   font-size: large;
   margin: 0 10px;
-  :hover {
+  &:hover {
+    transition: 0.1s ease-in-out;
     color: white;
     text-shadow: grey 1px 0.25px 2px;
     text-decoration: underline;
     border: 1px solid #0000ff8f;
     background-color: #0000ff8f;
-    /* padding: 0 10px; */
   }
 `;
 export const NavBtn = styled.button`
@@ -53,12 +53,12 @@ export const NavBtn = styled.button`
   color: lightblue;
   font-size: large;
   text-shadow: black 1px 1px 1px;
-  :hover {
+  &:hover {
     color: white;
     text-decoration: underline;
     border: 1px solid darkred;
     background-color: darkred;
-    /* padding: 0 10px; */
+    transition: 0.2s ease-in-out;
   }
 `;
 export const MobileIcon = styled.div`

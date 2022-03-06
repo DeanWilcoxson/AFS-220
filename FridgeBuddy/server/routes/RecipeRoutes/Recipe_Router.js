@@ -11,3 +11,14 @@ router.get("/", (req, res, next) => {
     return res.status(200).send(recipes);
   });
 });
+
+router.post("/", (req, res, next) => {
+  const newRecipe = new Recipe(req.body);
+  newRecipe.save((err, newRecipe) => {
+    if (err) {
+      res.status(500);
+      return next(err);
+    }
+    return res.status(201).send(newRecipe);
+  });
+});

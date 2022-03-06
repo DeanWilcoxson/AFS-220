@@ -84,7 +84,7 @@ export const SideBtn = styled.button`
   text-decoration: none;
   &:hover {
     transition: 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    background: red;
+    color: #fff;
   }
 `;

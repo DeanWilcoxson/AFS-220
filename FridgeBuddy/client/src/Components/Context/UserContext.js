@@ -62,12 +62,26 @@ export default function UserProvider(props) {
   }
   function saveUserRecipe(recipe) {
     setUserRecipes((prevState) => [...prevState, recipe]);
+    userAxios
+      .post("/api/recipe", recipe)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     console.log(userRecipes);
   }
   function removeUserRecipe(id) {
-    console.log(id);
-    userRecipes.splice(userRecipes.indexOf(id, 0), 1);
-    console.log(userRecipes);
+    var copy = [...userRecipes];
+    copy.splice(
+      copy.indexOf((recipe) => {
+        return recipe.id === Number(id);
+      }),
+      1
+    );
+    console.log(copy);
+    setUserRecipes(copy);
   }
   function transformString(ingredients) {
     return ingredients;

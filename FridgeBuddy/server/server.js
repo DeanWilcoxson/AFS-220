@@ -17,7 +17,7 @@ app.use(morgan("dev"));
 app.use("/auth", require("./routes/Auth_Router"));
 app.use("/api", expressJwt({ secret: process.env.secret, algorithms: ["HS256"] }));
 // app.use("/api/user", require("./routes/User_Router.js"));
-// app.use("/api/recipe", require("./routes/Recipe_Router.js"));
+app.use("/api/recipe", require("./routes/Recipe_Router.js"));
 
 app.use((err, req, res, next) => {
   console.log(err);

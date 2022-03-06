@@ -51,36 +51,40 @@ export const ButtonBox = styled.div`
 export const InstructionsBtn = styled.button`
   background-color: #80808099;
   border-radius: 5px;
-  :hover {
+  &:hover {
+    transition: 0.2s ease-in-out;
     color: white;
-    background-color: green
+    background-color: green;
   }
   color: lightblue;
 `;
 export const IngredientsBtn = styled.button`
   background-color: #80808099;
   border-radius: 5px;
-  :hover {
+  &:hover {
+    transition: 0.2s ease-in-out;
     color: white;
-    background-color: green
+    background-color: green;
   }
   color: lightblue;
 `;
 export const DeleteBtn = styled.button`
   background-color: #80808099;
   border-radius: 5px;
-  :hover {
+  &:hover {
+    transition: 0.2s ease-in-out;
     color: white;
-    background-color: green
+    background-color: green;
   }
   color: lightblue;
 `;
 export const SaveBtn = styled.button`
   background-color: #80808099;
   border-radius: 5px;
-  :hover {
+  &:hover {
+    transition: 0.2s ease-in-out;
     color: white;
-    background-color: green
+    background-color: green;
   }
   color: lightblue;
 `;
