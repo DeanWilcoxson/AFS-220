@@ -20,7 +20,6 @@ const Instruction = ({ name, step, ingredients, equipment }) => {
       <StepContainer>
         <Step>Step{step}</Step>
         <StepDesc>{name}</StepDesc>
-
         {ingredients.map((food) => {
           return (
             <IngredientsList>
