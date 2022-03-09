@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { UserContext } from "./../../Context/UserContext";
-// import Instructions from "./Instructions/Instructions";
+import Instructions from "./Instructions/Instructions";
 import {
   RecipeContainer,
   RecipeTitle,
@@ -14,12 +14,16 @@ import {
   ButtonBox,
 } from "./RecipeElements";
 const Recipe = ({ title, image, id, recipe }) => {
-  const { getInstructions, saveUserRecipe, removeUserRecipe } = useContext(
-    UserContext
-  );
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
+  const { saveUserRecipe, removeUserRecipe } = useContext(UserContext);
+  const [openIngredients, setOpenIngredients] = useState(false);
+  const [openInstructions, setOpenInstructions] = useState(false);
+  const ingredientsToggle = () => {
+    setOpenIngredients(!openIngredients);
+    setOpenInstructions(false);
+  };
+  const instructionsToggle = () => {
+    setOpenInstructions(!openInstructions);
+    setOpenIngredients(false);
   };
   const removeRecipe = (e) => {
     removeUserRecipe(e.target.parentNode.parentNode.id);
@@ -34,16 +38,16 @@ const Recipe = ({ title, image, id, recipe }) => {
       <ButtonBox>
         <IngredientsBtn
           onClick={() => {
-            toggle();
+            ingredientsToggle();
           }}
         >
           Ingredients
         </IngredientsBtn>
         <InstructionsBtn
           onClick={(e) => {
-            getInstructions(e.target.parentNode.parentNode.id);
-            console.log(e.target.parentNode.parentNode.id);
-            toggle();
+            // getInstructions(e.target.parentNode.parentNode.id);
+            // console.log(e.target.parentNode.parentNode.id);
+            instructionsToggle();
           }}
         >
           Instructions
@@ -51,7 +55,7 @@ const Recipe = ({ title, image, id, recipe }) => {
         <SaveBtn onClick={saveRecipe}>Save Recipe</SaveBtn>
         <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
       </ButtonBox>
-      {toggle ? (
+      {!openIngredients ? (
         <></>
       ) : (
         <RecipeIngredients>
@@ -71,6 +75,7 @@ const Recipe = ({ title, image, id, recipe }) => {
           })}
         </RecipeIngredients>
       )}
+      {!openInstructions ? <></> : <Instructions />}
     </RecipeContainer>
   );
 };

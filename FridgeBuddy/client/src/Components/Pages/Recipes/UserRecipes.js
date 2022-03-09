@@ -1,9 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Recipe from "./Recipe";
 import { UserRecipesList } from "./RecipeElements";
 import { UserContext } from "../../Context/UserContext";
 const UserRecipes = () => {
-  const { userRecipes } = useContext(UserContext);
+  const { userRecipes, getSavedUserRecipes } = useContext(UserContext);
+  useEffect(() => {
+    getSavedUserRecipes();
+    console.log(userRecipes);
+  }, [userRecipes, getSavedUserRecipes]);
   return (
     <UserRecipesList>
       {userRecipes.map((recipe) => {

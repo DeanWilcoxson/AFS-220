@@ -16,50 +16,81 @@ export default function UserProvider(props) {
     recipes: [],
     userRecipes: [],
     ingredients: [],
-    instructions: [],
+    // instructions: [],
     errMsg: "",
   };
   const [userState, setUserState] = useState(initialState);
   const [recipes, setRecipes] = useState([]);
   const [userRecipes, setUserRecipes] = useState([]);
-  const [randomRecipes, setRandomRecipes] = useState([]);
-  const [instructions, setInstructions] = useState([]);
-  const apiKey = "25f0ffbe6a0e4ee19da822eed7d8af01";
+  // const [randomRecipes, setRandomRecipes] = useState([]);
+  // const [instructions, setInstructions] = useState({ name: "", steps: [] });
+  // const apiKey = "25f0ffbe6a0e4ee19da822eed7d8af01";
+  const apiKeyTwo = "7ea021b61b5a4aff96d8b9e672891f94";
   function getRecipes(ingredients) {
     var newString = transformString(ingredients);
     axios
       .get(
-        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=10&apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=3&apiKey=${apiKeyTwo}`
       )
       .then((res) => {
-        setRecipes(res.data);
+        for (let i = 0; i < res.data.length; i++) {
+          // var recipe = res.data[i];
+          console.log(res.data);
+          axios
+            .get(
+              `https://api.spoonacular.com/recipes/${res.data[i].id}/analyzedInstructions?&apiKey=${apiKeyTwo}`
+            )
+            .then((response) => {
+              console.log(response);
+              setRecipes((prevRecipes) => [
+                ...prevRecipes,
+                // { ...res.data[i], instructions: response.data[0].steps },
+              ]);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+        // setRecipes(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
   }
-  function getRandomRecipes() {
-    axios
-      .get(`https://api.spoonacular.com/recipes/random?number=15&${apiKey}`)
+  function getSavedUserRecipes() {
+    userAxios
+      .get("/api/recipe/saved")
       .then((res) => {
-        setRandomRecipes(res.data);
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
+    console.log(userRecipes);
   }
-  function getInstructions(id) {
-    axios
-      .get(
-        `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?&apiKey=${apiKey}`
-      )
-      .then((res) => {
-        setInstructions(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+  // function getRandomRecipes() {
+  //   axios
+  //     .get(`https://api.spoonacular.com/recipes/random?number=15&${apiKey}`)
+  //     .then((res) => {
+  //       setRandomRecipes(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
+  // function getInstructions(id) {
+  // axios
+  //   .get(
+  //     `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?&apiKey=${apiKeyTwo}`
+  //   )
+  //   .then((res) => {
+  // setInstructions(["test"]);
+  // res.data
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // });
+  // }
   function saveUserRecipe(recipe) {
     setUserRecipes((prevState) => [...prevState, recipe]);
     userAxios
@@ -75,7 +106,7 @@ export default function UserProvider(props) {
   function removeUserRecipe(id) {
     var copy = [...userRecipes];
     copy.splice(
-      copy.indexOf((recipe) => {
+      copy.findIndex((recipe) => {
         return recipe.id === Number(id);
       }),
       1
@@ -145,13 +176,14 @@ export default function UserProvider(props) {
         handleAuthErr,
         getRecipes,
         recipes,
-        instructions,
-        getInstructions,
-        randomRecipes,
-        getRandomRecipes,
+        // instructions,
+        // getInstructions,
+        // randomRecipes,
+        // getRandomRecipes,
         userRecipes,
         saveUserRecipe,
         removeUserRecipe,
+        getSavedUserRecipes,
       }}
     >
       {props.children}

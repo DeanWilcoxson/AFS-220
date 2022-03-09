@@ -7,7 +7,7 @@ const Instructions = () => {
   console.log(instructions);
   return (
     <InstructionsContainer>
-      {instructions.steps.map((instruction) => {
+      {instructions.map((instruction) => {
         console.log(instruction);
         return (
           <Instruction

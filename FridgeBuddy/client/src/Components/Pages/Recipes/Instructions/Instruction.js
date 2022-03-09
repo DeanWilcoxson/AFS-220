@@ -10,7 +10,11 @@ import {
   EquipmentImg,
   EquipmentList,
 } from "./instructionElements";
+// import { useState } from "react";
+
 const Instruction = ({ name, step, ingredients, equipment }) => {
+  // const [instructions, setInstructions] = useState({ name: "", steps: [] });
+
   return (
     <StepList>
       <StepContainer>
