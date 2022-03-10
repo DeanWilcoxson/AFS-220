@@ -1,25 +1,27 @@
-import { useContext } from "react";
-import { UserContext } from "../../../Context/UserContext";
+
 import Instruction from "./Instruction";
 import { InstructionsContainer } from "./instructionElements";
-const Instructions = () => {
-  const { instructions } = useContext(UserContext);
+const Instructions = ({ instructions }) => {
   console.log(instructions);
   return (
     <InstructionsContainer>
-      {instructions.map((instruction) => {
-        console.log(instruction);
-        return (
-          <Instruction
-            instruction={instruction}
-            id={instructions.steps.number}
-            step={instructions.steps.number}
-            name={instructions.steps.step}
-            ingredients={instructions.steps.ingredients}
-            equipment={instructions.steps.equipment}
-          />
-        );
-      })}
+      {instructions.length ? (
+        instructions[0].steps.map((instruction) => {
+          console.log(instruction);
+          return (
+            <Instruction
+              instruction={instruction}
+              id={instruction.number}
+              step={instruction.number}
+              name={instruction.step}
+              ingredients={instruction.ingredients}
+              equipment={instruction.equipment}
+            />
+          );
+        })
+      ) : (
+        <></>
+      )}
     </InstructionsContainer>
   );
 };

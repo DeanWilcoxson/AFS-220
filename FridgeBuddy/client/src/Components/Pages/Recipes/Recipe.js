@@ -75,7 +75,11 @@ const Recipe = ({ title, image, id, recipe }) => {
           })}
         </RecipeIngredients>
       )}
-      {!openInstructions ? <></> : <Instructions />}
+      {!openInstructions ? (
+        <></>
+      ) : (
+        <Instructions instructions={recipe.instructions} />
+      )}
     </RecipeContainer>
   );
 };

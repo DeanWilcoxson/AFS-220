@@ -4,39 +4,46 @@ import {
   StepContainer,
   StepDesc,
   IngredientsList,
-  IngredientImg,
   Ingredient,
   Equipment,
-  EquipmentImg,
   EquipmentList,
 } from "./instructionElements";
-// import { useState } from "react";
 
 const Instruction = ({ name, step, ingredients, equipment }) => {
-  // const [instructions, setInstructions] = useState({ name: "", steps: [] });
-
+  console.log(ingredients, equipment);
   return (
     <StepList>
       <StepContainer>
-        <Step>Step{step}</Step>
+        <Step>Step {step}</Step>
         <StepDesc>{name}</StepDesc>
-        {ingredients.map((food) => {
-          return (
-            <IngredientsList>
-              <Ingredient>{food}</Ingredient>
-              <IngredientImg src={food.image} />
-            </IngredientsList>
-          );
-        })}
-
-        {equipment.map((equip) => {
-          return (
-            <EquipmentList>
-              <Equipment>{equip}</Equipment>
-              <EquipmentImg src={equip.image} />
-            </EquipmentList>
-          );
-        })}
+        {ingredients.length ? (
+          <>
+            <StepDesc>Ingredients</StepDesc>
+            {ingredients.map((food) => {
+              return (
+                <IngredientsList>
+                  <Ingredient>{food.name}</Ingredient>
+                </IngredientsList>
+              );
+            })}
+          </>
+        ) : (
+          <></>
+        )}
+        {equipment.length ? (
+          <>
+            <StepDesc>Equipment</StepDesc>
+            {equipment.map((equip) => {
+              return (
+                <EquipmentList>
+                  <Equipment>{equip.name}</Equipment>{" "}
+                </EquipmentList>
+              );
+            })}
+          </>
+        ) : (
+          <></>
+        )}
       </StepContainer>
     </StepList>
   );

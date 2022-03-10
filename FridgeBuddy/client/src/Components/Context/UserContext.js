@@ -24,13 +24,13 @@ export default function UserProvider(props) {
   const [userRecipes, setUserRecipes] = useState([]);
   // const [randomRecipes, setRandomRecipes] = useState([]);
   // const [instructions, setInstructions] = useState({ name: "", steps: [] });
-  // const apiKey = "25f0ffbe6a0e4ee19da822eed7d8af01";
-  const apiKeyTwo = "7ea021b61b5a4aff96d8b9e672891f94";
+  const apiKey = "993d2d97a2514af7bd1e6689c01623cd";
+  // const apiKeyTwo = "7ea021b61b5a4aff96d8b9e672891f94";
   function getRecipes(ingredients) {
     var newString = transformString(ingredients);
     axios
       .get(
-        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=3&apiKey=${apiKeyTwo}`
+        `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${newString}&number=1&apiKey=${apiKey}`
       )
       .then((res) => {
         for (let i = 0; i < res.data.length; i++) {
@@ -38,20 +38,20 @@ export default function UserProvider(props) {
           console.log(res.data);
           axios
             .get(
-              `https://api.spoonacular.com/recipes/${res.data[i].id}/analyzedInstructions?&apiKey=${apiKeyTwo}`
+              `https://api.spoonacular.com/recipes/${res.data[i].id}/analyzedInstructions?&apiKey=${apiKey}`
             )
             .then((response) => {
               console.log(response);
               setRecipes((prevRecipes) => [
-                ...prevRecipes,
-                // { ...res.data[i], instructions: response.data[0].steps },
+                // ...prevRecipes,
+                { ...res.data[i], instructions: response.data },
               ]);
             })
             .catch((err) => {
               console.log(err);
             });
         }
-        // setRecipes(res.data);
+        setRecipes(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -81,7 +81,7 @@ export default function UserProvider(props) {
   // function getInstructions(id) {
   // axios
   //   .get(
-  //     `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?&apiKey=${apiKeyTwo}`
+  //     `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?&apiKey=${apiKey}`
   //   )
   //   .then((res) => {
   // setInstructions(["test"]);
