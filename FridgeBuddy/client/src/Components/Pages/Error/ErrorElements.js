@@ -15,6 +15,6 @@ export const ErrorBox = styled.span`
 `;
 export const ErrorDesc = styled.h1`
   color: red;
-  text-shadow: black 1px 2px 1px;
+  text-shadow: black 2px 1.5px 1px;
   z-index: 20;
 `;

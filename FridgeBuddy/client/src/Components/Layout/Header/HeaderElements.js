@@ -8,9 +8,9 @@ export const HeaderContainer = styled.div`
   top: 0;
   right: 0;
   width: 100%;
-  background-color: #ffa600ac;
+  background-color:#008000aa;
   color: lightblue;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
   z-index: 10;
   border-bottom: black 1px solid;
   @media screen and (max-width: 768px) {
@@ -35,7 +35,7 @@ export const HeaderWelcome = styled.h3`
   width: 100%;
   height: 10%;
   color: lightblue;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
   padding: 20px 15px;
   margin: 10px;
   @media screen and (max-width: 768px) {
@@ -43,6 +43,6 @@ export const HeaderWelcome = styled.h3`
   }
 `;
 export const Name = styled.b`
-  color: #0000ff8f;
-  text-shadow: grey .5px 1px 1px;
+  color: white;
+  text-shadow: black 2px 1.5px 1px;
 `;

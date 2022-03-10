@@ -21,7 +21,7 @@ export const AuthBox = styled.div`
 `;
 export const AuthTitle = styled.h4`
   color: lightblue;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
   text-decoration: underline;
   z-index: 999;
   padding: 5px;
@@ -47,7 +47,7 @@ export const AuthButton = styled.button`
   background-color: transparent;
   padding: 5px;
   color: lightblue;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
   font-size: 1.25rem;
 `;
 export const ToggleButton = styled.button`
@@ -56,7 +56,7 @@ export const ToggleButton = styled.button`
   background-color: transparent;
   padding: 5px;
   color: lightblue;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
   font-size: 1.25rem;
 `;
 export const AuthError = styled.div`
@@ -64,6 +64,6 @@ export const AuthError = styled.div`
   background-color: #ff000062;
   padding: 50px;
   color: white;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
   font-size: 1.25rem;
 `;

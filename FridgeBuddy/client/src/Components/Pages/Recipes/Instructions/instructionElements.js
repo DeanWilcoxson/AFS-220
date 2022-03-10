@@ -25,13 +25,13 @@ export const Step = styled.h1`
   grid-column: 1/3;
   grid-row: auto;
   z-index: 20;
-  color: blue;
-  background-color: orange;
+  color: lightblue;
+  background-color: #008000aa;
   margin: 0px;
   padding: 0px;
   align-self: center;
   font-weight: bold;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1px 1px;
 `;
 export const StepDesc = styled.p`
   grid-column: 1/3;
@@ -40,7 +40,7 @@ export const StepDesc = styled.p`
   padding: 10px 20px;
   margin: 0 20px;
   font-weight: bold;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1px 1px;
   z-index: 20;
 `;
 export const StepDescTwo = styled.p`
@@ -48,7 +48,7 @@ export const StepDescTwo = styled.p`
   padding: 0 20px;
   margin: 0 20px;
   font-weight: bold;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1px 1px;
   z-index: 20;
 `;
 export const IngredientsList = styled.ul`

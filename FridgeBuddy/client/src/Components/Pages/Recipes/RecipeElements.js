@@ -32,13 +32,12 @@ export const RecipeContainer = styled.div`
   margin: 20px 0;
 `;
 export const RecipeTitle = styled.h1`
-  background-color: orange;
-  color: blue;
+  background-color: #008000aa;
+  color: lightblue;
   width: 100%;
   font-weight: bold;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
 `;
-
 export const IngredientBox = styled.div`
   width: 100%;
   display: flex;
@@ -49,10 +48,11 @@ export const RecipeIngredients = styled.ul`
   margin: 10px;
 `;
 export const IngredientsTitle = styled.h1`
-  background-color: orange;
-  color: blue;
+  background-color: #008000aa;
+  text-shadow: black 2px 1.5px 1px;
+  color: lightblue;
   width: 100%;
-  padding: 0px;
+  padding: 0;
   margin: 0;
 `;
 export const Ingredient = styled.li`
@@ -60,7 +60,7 @@ export const Ingredient = styled.li`
   padding: 0 20px;
   margin: 0 20px;
   font-weight: bold;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 2px 1.5px 1px;
 `;
 export const ButtonBox = styled.div`
   grid-column: 1/4;
@@ -74,7 +74,7 @@ export const Btn = styled.button`
   background-color: #80808099;
   border-radius: 5px;
   font-weight: bold;
-  text-shadow: black 1px 1px 1px;
+  text-shadow: black 1px 1.5px 1px;
 
   &:hover {
     transition: 0.2s ease-in-out;
