@@ -22,8 +22,6 @@ export default function UserProvider(props) {
   const [userState, setUserState] = useState(initialState);
   const [recipes, setRecipes] = useState([]);
   const [userRecipes, setUserRecipes] = useState([]);
-  // const [randomRecipes, setRandomRecipes] = useState([]);
-  // const [instructions, setInstructions] = useState({ name: "", steps: [] });
   const apiKey = "993d2d97a2514af7bd1e6689c01623cd";
   // const apiKeyTwo = "7ea021b61b5a4aff96d8b9e672891f94";
   function getRecipes(ingredients) {
@@ -34,14 +32,11 @@ export default function UserProvider(props) {
       )
       .then((res) => {
         for (let i = 0; i < res.data.length; i++) {
-          // var recipe = res.data[i];
-          console.log(res.data);
           axios
             .get(
               `https://api.spoonacular.com/recipes/${res.data[i].id}/analyzedInstructions?&apiKey=${apiKey}`
             )
             .then((response) => {
-              console.log(response);
               setRecipes((prevRecipes) => [
                 // ...prevRecipes,
                 { ...res.data[i], instructions: response.data },
@@ -68,29 +63,6 @@ export default function UserProvider(props) {
       });
     console.log(userRecipes);
   }
-  // function getRandomRecipes() {
-  //   axios
-  //     .get(`https://api.spoonacular.com/recipes/random?number=15&${apiKey}`)
-  //     .then((res) => {
-  //       setRandomRecipes(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-  // function getInstructions(id) {
-  // axios
-  //   .get(
-  //     `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?&apiKey=${apiKey}`
-  //   )
-  //   .then((res) => {
-  // setInstructions(["test"]);
-  // res.data
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  // });
-  // }
   function saveUserRecipe(recipe) {
     setUserRecipes((prevState) => [...prevState, recipe]);
     userAxios
@@ -176,10 +148,6 @@ export default function UserProvider(props) {
         handleAuthErr,
         getRecipes,
         recipes,
-        // instructions,
-        // getInstructions,
-        // randomRecipes,
-        // getRandomRecipes,
         userRecipes,
         saveUserRecipe,
         removeUserRecipe,

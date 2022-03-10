@@ -5,12 +5,11 @@ import {
   RecipeContainer,
   RecipeTitle,
   RecipeImage,
+  IngredientBox,
   RecipeIngredients,
   Ingredient,
-  InstructionsBtn,
-  IngredientsBtn,
-  DeleteBtn,
-  SaveBtn,
+  IngredientsTitle,
+  Btn,
   ButtonBox,
 } from "./RecipeElements";
 const Recipe = ({ title, image, id, recipe }) => {
@@ -36,44 +35,33 @@ const Recipe = ({ title, image, id, recipe }) => {
       <RecipeTitle>{title}</RecipeTitle>
       <RecipeImage src={image} />
       <ButtonBox>
-        <IngredientsBtn
-          onClick={() => {
-            ingredientsToggle();
-          }}
-        >
-          Ingredients
-        </IngredientsBtn>
-        <InstructionsBtn
-          onClick={(e) => {
-            // getInstructions(e.target.parentNode.parentNode.id);
-            // console.log(e.target.parentNode.parentNode.id);
-            instructionsToggle();
-          }}
-        >
-          Instructions
-        </InstructionsBtn>
-        <SaveBtn onClick={saveRecipe}>Save Recipe</SaveBtn>
-        <DeleteBtn onClick={removeRecipe}>Remove Saved Recipe</DeleteBtn>
+        <Btn onClick={ingredientsToggle}>Ingredients</Btn>
+        <Btn onClick={instructionsToggle}>Instructions</Btn>
+        <Btn onClick={saveRecipe}>Save Recipe</Btn>
+        <Btn onClick={removeRecipe}>Remove Saved Recipe</Btn>
       </ButtonBox>
       {!openIngredients ? (
         <></>
       ) : (
-        <RecipeIngredients>
-          {recipe.usedIngredients.map((usedIngredient) => {
-            return (
-              <Ingredient key={usedIngredient.id}>
-                {usedIngredient.original}
-              </Ingredient>
-            );
-          })}
-          {recipe.missedIngredients.map((unUsedIngredient) => {
-            return (
-              <Ingredient key={unUsedIngredient.id}>
-                {unUsedIngredient.original}
-              </Ingredient>
-            );
-          })}
-        </RecipeIngredients>
+        <IngredientBox>
+          <IngredientsTitle>Ingredients</IngredientsTitle>
+          <RecipeIngredients>
+            {recipe.usedIngredients.map((usedIngredient) => {
+              return (
+                <Ingredient key={usedIngredient.id}>
+                  {usedIngredient.original}
+                </Ingredient>
+              );
+            })}
+            {recipe.missedIngredients.map((unUsedIngredient) => {
+              return (
+                <Ingredient key={unUsedIngredient.id}>
+                  {unUsedIngredient.original}
+                </Ingredient>
+              );
+            })}
+          </RecipeIngredients>
+        </IngredientBox>
       )}
       {!openInstructions ? (
         <></>

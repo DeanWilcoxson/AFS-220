@@ -25,7 +25,6 @@ router.post("/", (req, res, next) => {
 });
 
 router.get("/saved/", (req, res, next) => {
-  console.log("a test");
   Recipe.find({ user: req.user._id }, (err, recipes) => {
     if (err) {
       res.status(500);

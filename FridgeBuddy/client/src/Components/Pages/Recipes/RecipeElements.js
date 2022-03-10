@@ -15,6 +15,10 @@ export const UserRecipesList = styled.div`
   align-items: center;
   z-index: 15;
 `;
+export const RecipeImage = styled.img`
+  grid-column: 1/4;
+  grid-row: 2/3;
+`;
 export const RecipeContainer = styled.div`
   z-index: 15;
   display: flex;
@@ -31,56 +35,47 @@ export const RecipeTitle = styled.h1`
   background-color: orange;
   color: blue;
   width: 100%;
+  font-weight: bold;
+  text-shadow: black 1px 1px 1px;
 `;
-export const RecipeImage = styled.img`
-  grid-column: 1/4;
-  grid-row: 2/3;
+
+export const IngredientBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 export const RecipeIngredients = styled.ul`
-  /* display: none; */
+  padding: 10px;
+  margin: 10px;
+`;
+export const IngredientsTitle = styled.h1`
+  background-color: orange;
+  color: blue;
+  width: 100%;
+  padding: 0px;
+  margin: 0;
 `;
 export const Ingredient = styled.li`
   color: lightblue;
+  padding: 0 20px;
+  margin: 0 20px;
+  font-weight: bold;
+  text-shadow: black 1px 1px 1px;
 `;
 export const ButtonBox = styled.div`
   grid-column: 1/4;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 20px 0;
+  width: 100%;
 `;
-export const InstructionsBtn = styled.button`
+export const Btn = styled.button`
   background-color: #80808099;
   border-radius: 5px;
-  &:hover {
-    transition: 0.2s ease-in-out;
-    color: white;
-    background-color: green;
-  }
-  color: lightblue;
-`;
-export const IngredientsBtn = styled.button`
-  background-color: #80808099;
-  border-radius: 5px;
-  &:hover {
-    transition: 0.2s ease-in-out;
-    color: white;
-    background-color: green;
-  }
-  color: lightblue;
-`;
-export const DeleteBtn = styled.button`
-  background-color: #80808099;
-  border-radius: 5px;
-  &:hover {
-    transition: 0.2s ease-in-out;
-    color: white;
-    background-color: green;
-  }
-  color: lightblue;
-`;
-export const SaveBtn = styled.button`
-  background-color: #80808099;
-  border-radius: 5px;
+  font-weight: bold;
+  text-shadow: black 1px 1px 1px;
+
   &:hover {
     transition: 0.2s ease-in-out;
     color: white;

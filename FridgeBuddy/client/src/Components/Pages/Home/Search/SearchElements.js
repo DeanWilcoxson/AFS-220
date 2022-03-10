@@ -15,6 +15,8 @@ export const SearchInput = styled.input`
 `;
 export const Button = styled.button`
   transition: 0.2s ease-in-out;
+  background-color: #8080807c;
+
   z-index: 20;
   border-radius: 10px;
   padding: 10px;

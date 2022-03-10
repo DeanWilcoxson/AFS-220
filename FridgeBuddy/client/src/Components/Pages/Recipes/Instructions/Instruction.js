@@ -1,51 +1,46 @@
 import {
   Step,
-  StepList,
   StepContainer,
   StepDesc,
+  StepDescTwo,
   IngredientsList,
   Ingredient,
   Equipment,
   EquipmentList,
+  StepBox,
 } from "./instructionElements";
 
 const Instruction = ({ name, step, ingredients, equipment }) => {
   console.log(ingredients, equipment);
   return (
-    <StepList>
-      <StepContainer>
-        <Step>Step {step}</Step>
-        <StepDesc>{name}</StepDesc>
-        {ingredients.length ? (
-          <>
-            <StepDesc>Ingredients</StepDesc>
+    <StepContainer>
+      <Step>Step {step}</Step>
+      <StepDesc>{name}</StepDesc>
+      {ingredients.length ? (
+        <StepBox>
+          <StepDescTwo>Ingredients</StepDescTwo>
+          <IngredientsList>
             {ingredients.map((food) => {
-              return (
-                <IngredientsList>
-                  <Ingredient>{food.name}</Ingredient>
-                </IngredientsList>
-              );
+              return <Ingredient>{food.name}</Ingredient>;
             })}
-          </>
-        ) : (
-          <></>
-        )}
-        {equipment.length ? (
-          <>
-            <StepDesc>Equipment</StepDesc>
+          </IngredientsList>
+        </StepBox>
+      ) : (
+        <></>
+      )}
+      {equipment.length ? (
+        <StepBox>
+          <StepDescTwo>Equipment</StepDescTwo>
+          <EquipmentList>
             {equipment.map((equip) => {
-              return (
-                <EquipmentList>
-                  <Equipment>{equip.name}</Equipment>{" "}
-                </EquipmentList>
-              );
+              return <Equipment>{equip.name}</Equipment>;
             })}
-          </>
-        ) : (
-          <></>
-        )}
-      </StepContainer>
-    </StepList>
+          </EquipmentList>
+        </StepBox>
+      ) : (
+        <></>
+      )}
+    </StepContainer>
   );
 };
 

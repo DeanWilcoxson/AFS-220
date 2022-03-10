@@ -27,7 +27,6 @@ const Auth = () => {
   }
   function handleSignup(e) {
     e.preventDefault();
-    console.log(inputs);
     signup(inputs);
   }
   function toggleForm() {
