@@ -28,7 +28,7 @@ export const Step = styled.h1`
   color: lightblue;
   background-color: #008000aa;
   margin: 0px;
-  padding: 0px;
+  padding: 0 20px;
   align-self: center;
   font-weight: bold;
   text-shadow: black 2px 1px 1px;
@@ -70,4 +70,5 @@ export const EquipmentList = styled.ul`
 export const Equipment = styled.li`
   z-index: 20;
   color: lightblue;
+  text-shadow: black 1px 1px 1px;
 `;
