@@ -5,7 +5,7 @@ import {
   RecipeContainer,
   RecipeTitle,
   RecipeImage,
-  IngredientBox,
+  IngredientsBox,
   RecipeIngredients,
   Ingredient,
   IngredientsTitle,
@@ -43,7 +43,7 @@ const Recipe = ({ title, image, id, recipe }) => {
       {!openIngredients ? (
         <></>
       ) : (
-        <IngredientBox>
+        <IngredientsBox>
           <IngredientsTitle>Ingredients</IngredientsTitle>
           <RecipeIngredients>
             {recipe.usedIngredients.map((usedIngredient) => {
@@ -61,7 +61,7 @@ const Recipe = ({ title, image, id, recipe }) => {
               );
             })}
           </RecipeIngredients>
-        </IngredientBox>
+        </IngredientsBox>
       )}
       {!openInstructions ? (
         <></>

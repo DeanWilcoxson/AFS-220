@@ -6,7 +6,6 @@ const Recipes = () => {
   const { recipes } = useContext(UserContext);
   return (
     <RecipesList>
-      
         {recipes.map((recipe) => {
           return (
             <Recipe
@@ -18,7 +17,7 @@ const Recipes = () => {
             />
           );
         })}
-      
+    
     </RecipesList>
   );
 };

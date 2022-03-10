@@ -15,9 +15,9 @@ export const UserRecipesList = styled.div`
   align-items: center;
   z-index: 15;
 `;
-export const RecipeImage = styled.img`
-  grid-column: 1/4;
-  grid-row: 2/3;
+export const RecipeBox = styled.ul`
+  display: flex;
+  flex-direction: column;
 `;
 export const RecipeContainer = styled.div`
   z-index: 15;
@@ -38,29 +38,9 @@ export const RecipeTitle = styled.h1`
   font-weight: bold;
   text-shadow: black 2px 1.5px 1px;
 `;
-export const IngredientBox = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-export const RecipeIngredients = styled.ul`
-  padding: 10px;
-  margin: 10px;
-`;
-export const IngredientsTitle = styled.h1`
-  background-color: #008000aa;
-  text-shadow: black 2px 1.5px 1px;
-  color: lightblue;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-`;
-export const Ingredient = styled.li`
-  color: lightblue;
-  padding: 0 20px;
-  margin: 0 20px;
-  font-weight: bold;
-  text-shadow: black 2px 1.5px 1px;
+export const RecipeImage = styled.img`
+  grid-column: 1/4;
+  grid-row: 2/3;
 `;
 export const ButtonBox = styled.div`
   grid-column: 1/4;
@@ -82,4 +62,28 @@ export const Btn = styled.button`
     background-color: green;
   }
   color: lightblue;
+`;
+export const IngredientsBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+export const IngredientsTitle = styled.h1`
+  background-color: #008000aa;
+  text-shadow: black 2px 1.5px 1px;
+  color: lightblue;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+`;
+export const RecipeIngredients = styled.ul`
+  padding: 10px;
+  margin: 10px;
+`;
+export const Ingredient = styled.li`
+  color: lightblue;
+  padding: 0 20px;
+  margin: 0 20px;
+  font-weight: bold;
+  text-shadow: black 2px 1.5px 1px;
 `;
