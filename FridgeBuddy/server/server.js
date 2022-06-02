@@ -6,7 +6,7 @@ const expressJwt = require("express-jwt");
 require("dotenv").config();
 
 async function main() {
-  await mongoose.connect("mongodb://localhost:27017/RecipeFinder");
+  await mongoose.connect("mongodb+srv://DeanWilcoxson:HollyHazel3248!@cluster0.6zqfhse.mongodb.net/test");
   console.log("Connected to the DB");
 }
 
